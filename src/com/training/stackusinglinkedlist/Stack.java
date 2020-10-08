@@ -13,17 +13,31 @@ public class Stack<T> {
         Top.printList();
     }
 
+    public void pop(){
+        Top.deleteNodeFront();
+    }
+
+    public T top(){
+        return (T) Top.getHead().getValue();
+    }
+
+    public boolean isEmpty(){
+        if(Top.getHead()==null)
+            return true;
+        return false;
+    }
+
     public static void main(String[] args) {
         Stack<Integer> s = new Stack<>();
         s.push(70);
         s.push(30);
         s.push(56);
         s.display();
-//        s.pop();
-//        s.pop();
-//        s.display();
-//        s.pop();
-//        System.out.println(s.isEmpty());
+        s.pop();
+        s.pop();
+        s.display();
+        s.pop();
+        System.out.println(s.isEmpty());
 
     }
 }
